@@ -12,12 +12,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+setupSwagger(app); // Ativa o Swagger
+
 app.use("/api/users", usersRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/report", reportRoutes);
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-setupSwagger(app); // Ativa o Swagger
 
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

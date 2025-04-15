@@ -14,8 +14,8 @@ const upload = require("../config/upload")
  * @swagger
  * /api/users:
  *   get:
- *     summary: Lista todos os bruxos
- *     tags: [Wizards]
+ *     summary: Lista todos os usuários
+ *     tags: [Users]
  *     parameters:
  *       - in: query
  *         name: name
@@ -24,7 +24,7 @@ const upload = require("../config/upload")
  *         description: Filtro por nome
  *     responses:
  *       200:
- *         description: Lista de bruxos
+ *         description: Lista de users
  */
 router.get('/', UserController.getAllUsers);
 
@@ -96,7 +96,7 @@ router.delete('/:id', UserController.deleteUser);
  * @swagger
  * /api/users/{id}:
  *   put:
- *     summary: Atualiza um bruxo
+ *     summary: Atualiza um usuário
  *     tags: [Users]
  *     parameters:
  *       - in: path
