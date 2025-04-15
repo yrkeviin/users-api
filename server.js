@@ -5,15 +5,19 @@ const cors = require("cors");
 const usersRoutes = require("./src/routes/usersRoutes");
 const postRoutes = require("./src/routes/postRoutes");
 const reportRoutes = require("./src/routes/reportRoutes");
+const setupSwagger = require('./src/config/swagger'); // Swagger aqui
+const path = require("path");
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
 app.use("/api/users", usersRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/report", reportRoutes);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+setupSwagger(app); // Ativa o Swagger
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

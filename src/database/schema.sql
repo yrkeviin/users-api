@@ -2,7 +2,7 @@ CREATE DATABASE user_db;
 
 \c user_db;
 
-CREATE TABLE usuarios (
+CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -13,10 +13,10 @@ CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
-    user_id INTEGER REFERENCES usuarios(id) ON DELETE CASCADE
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
-INSERT INTO usuarios (name, email, password) VALUES 
+INSERT INTO users (name, email, password) VALUES 
     ('Luiz', 'Luiz@gmail.com', 'amods'),
     ('lucas', 'luccas@gmail.com', 'amods'),
     ('João', 'joao@gmail.com', 'amods');
