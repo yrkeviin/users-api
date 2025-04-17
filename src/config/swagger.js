@@ -8,10 +8,10 @@ const options = {
     info: {
       title: 'API dos Users e Posts',
       version: '1.0.0',
-      description: 'Documentação da API para gerenciar users e posts',
+      description: 'Documentação da API para gerenciar users posts',
     },
   },
-  apis: ['./routes/*.js'], // <- Caminho das suas rotas
+  apis: ['./src/routes/*.js'], // <- Caminho das suas rotas
 };
 
 const swaggerSpec = swaggerJsdoc(options);

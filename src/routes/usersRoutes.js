@@ -7,14 +7,14 @@ const upload = require("../config/upload")
  * @swagger
  * tags:
  *   name: Users
- *   description: Gerenciamento de usuários
+ *   description: Gerenciamento de users
  */
 
 /**
  * @swagger
  * /api/users:
  *   get:
- *     summary: Lista todos os usuários
+ *     summary: Lista todos os users
  *     tags: [Users]
  *     parameters:
  *       - in: query
@@ -96,7 +96,7 @@ router.delete('/:id', UserController.deleteUser);
  * @swagger
  * /api/users/{id}:
  *   put:
- *     summary: Atualiza um usuário
+ *     summary: Atualiza um user
  *     tags: [Users]
  *     parameters:
  *       - in: path
