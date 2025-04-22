@@ -31,10 +31,9 @@ const updateUsuarios = async (id, data) => {
 };
 
 const createUsuarios = async (name, email, password, photo) => {
-    const result = await pool.query("INSERT INTO users (name, email, password, photo) VALUES ($1, $2, $3, $4) RETURNING *", [name, email, password, photo]);    
+    const result = await pool.query("INSERT INTO usuarios (name, email, password, photo) VALUES ($1, $2, $3, $4) RETURNING *", [name, email, password, photo]);
     return result.rows[0];
 };
-
 
 module.exports = { getUsuarios, getUsuariosById, deleteUsuarios, updateUsuarios, createUsuarios };
 
